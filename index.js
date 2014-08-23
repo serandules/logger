@@ -8,7 +8,7 @@ if (!fs.existsSync(LOGS_DIR)) {
 }
 
 var p = function (id) {
-    id = 'common';
+    //id = 'common';
     return LOGS_DIR + '/' + id + '.log';
 };
 
