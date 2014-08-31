@@ -1,7 +1,7 @@
 var fs = require('fs');
 var stream = require('stream');
 
-var LOGS_DIR = process.env.LOGS_DIR || __dirname + '/tmp';
+var LOGS_DIR = process.env.LOGS_DIR || '/tmp/logs';
 
 if (!fs.existsSync(LOGS_DIR)) {
     fs.mkdirSync(LOGS_DIR);
