@@ -1,7 +1,6 @@
 var fs = require('fs');
 var stream = require('stream');
-
-var dev = process.env.NODE_ENV === 'development';
+var utils = require('utils');
 
 var LOGS_DIR = process.env.LOGS_DIR || '/tmp/logs';
 
@@ -10,7 +9,7 @@ if (!fs.existsSync(LOGS_DIR)) {
 }
 
 var p = function (id) {
-    return LOGS_DIR + '/' + (dev ? 'common' : id) + '.log';
+    return LOGS_DIR + '/' + (utils.prod() ? id : 'common') + '.log';
 };
 
 module.exports = function (id, type) {
