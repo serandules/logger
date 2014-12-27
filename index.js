@@ -9,7 +9,7 @@ if (!fs.existsSync(LOGS_DIR)) {
 }
 
 var p = function (id) {
-    return LOGS_DIR + '/' + (utils.prod() ? id : 'common') + '.log';
+    return LOGS_DIR + '/' + id + '.log';
 };
 
 module.exports = function (id, type) {
