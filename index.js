@@ -1,4 +1,4 @@
-var debug = require('debug')('serandules-logger');
+var debug = require('debug')('serandules:logger');
 var fs = require('fs');
 var stream = require('stream');
 var utils = require('utils');
