@@ -20,8 +20,11 @@ var build = function (log, args) {
     o = (typeof o === 'string' || o instanceof String) ? o : JSON.stringify(o);
     o = o.replace(/%([a-z%])/g, function (match, format) {
         // if we encounter an escaped % then don't increase the array index
-        if (match === '%%') return match;
-        return args[index++];
+        if (match === '%%') {
+            return match;
+        }
+        var o = args[index++];
+        return (typeof o === 'string' || o instanceof String) ? o : JSON.stringify(o);
     });
     return log.name + ':' + o;
 };
