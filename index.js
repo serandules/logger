@@ -34,19 +34,19 @@ var Log = function (name) {
 };
 
 Log.prototype.debug = function () {
-    console.info(build(this, arguments));
+    console.info('debug:' + build(this, arguments));
 };
 
 Log.prototype.info = function () {
-    console.info(build(this, arguments));
+    console.info('info:' + build(this, arguments));
 };
 
 Log.prototype.warn = function () {
-    console.info(build(this, arguments));
+    console.info('warn:' + build(this, arguments));
 };
 
 Log.prototype.error = function () {
-    console.info(build(this, arguments));
+    console.info('error:' + build(this, arguments));
 };
 
 Log.prototype.trace = function (err) {
