@@ -49,6 +49,10 @@ Log.prototype.error = function () {
     console.info('error:' + build(this, arguments));
 };
 
+Log.prototype.fatal = function (err) {
+    console.info('fatal:' + build(this, arguments));
+};
+
 Log.prototype.trace = function (err) {
     console.trace(err.stack);
 };
