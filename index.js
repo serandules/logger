@@ -1,7 +1,4 @@
-var debug = require('debug')('serandules:logger');
 var fs = require('fs');
-var stream = require('stream');
-var utils = require('utils');
 
 var LOGS_DIR = process.env.LOGS_DIR || '/tmp/logs';
 
@@ -54,7 +51,7 @@ Log.prototype.fatal = function (err) {
 };
 
 Log.prototype.trace = function (err) {
-    console.trace(err.stack);
+    console.log(err.stack);
 };
 
 
