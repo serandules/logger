@@ -14,7 +14,7 @@ var build = function (log, args) {
     args = Array.prototype.slice.call(args);
     var index = 1;
     var o = args[0];
-    o = (typeof o === 'string' || o instanceof String) ? o : JSON.stringify(o);
+    o = (typeof o === 'string' || o instanceof String) ? o : (JSON.stringify(o) || '');
     o = o.replace(/%([a-z%])/g, function (match, format) {
         // if we encounter an escaped % then don't increase the array index
         if (match === '%%') {
