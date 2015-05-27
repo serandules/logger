@@ -1,0 +1,9 @@
+{
+    "name": "logger",
+    "version": "0.0.0",
+    "description": "logger",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/serandules/logger.git"
+    }
+}
