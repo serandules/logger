@@ -21,7 +21,13 @@ var build = function (log, args) {
             return match;
         }
         var o = args[index++];
-        return (typeof o === 'string' || o instanceof String) ? o : JSON.stringify(o);
+        var out = '';
+        if (match === '%e') {
+            out += '\n';
+            o = o.stack || o;
+        }
+        out += (typeof o === 'string' || o instanceof String) ? o : JSON.stringify(o);
+        return out;
     });
     return log.name + ':' + o;
 };
