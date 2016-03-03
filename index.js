@@ -32,28 +32,32 @@ var build = function (log, args) {
     return log.name + ':' + o;
 };
 
+var time = function(message) {
+  return new Date().toISOString() + ':' + message;
+};
+
 var Log = function (name) {
     this.name = name;
 };
 
 Log.prototype.debug = function () {
-    console.info('debug:' + build(this, arguments));
+    console.info(time('debug:' + build(this, arguments)));
 };
 
 Log.prototype.info = function () {
-    console.info('info:' + build(this, arguments));
+    console.info(time('info:' + build(this, arguments)));
 };
 
 Log.prototype.warn = function () {
-    console.info('warn:' + build(this, arguments));
+    console.info(time('warn:' + build(this, arguments)));
 };
 
 Log.prototype.error = function () {
-    console.info('error:' + build(this, arguments));
+    console.info(time('error:' + build(this, arguments)));
 };
 
 Log.prototype.fatal = function (err) {
-    console.info('fatal:' + build(this, arguments));
+    console.info(time('fatal:' + build(this, arguments)));
 };
 
 Log.prototype.trace = function (err) {
