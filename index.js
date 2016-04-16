@@ -61,7 +61,7 @@ Log.prototype.fatal = function (err) {
 };
 
 Log.prototype.trace = function (err) {
-    console.log(err.stack);
+    console.info(err.stack);
 };
 
 
