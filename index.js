@@ -54,6 +54,7 @@ Log.prototype.warn = function () {
 
 Log.prototype.error = function () {
     console.info(time('error:' + build(this, arguments)));
+    console.trace('here')
 };
 
 Log.prototype.fatal = function (err) {
