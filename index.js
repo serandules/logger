@@ -10,11 +10,20 @@ var p = function (id) {
     return LOGS_DIR + '/' + id + '.log';
 };
 
+var stringify = function (o) {
+  if (typeof o === 'string' || o instanceof String) {
+    return o;
+  }
+  if (o instanceof Error) {
+    return o.stack;
+  }
+  return JSON.stringify(o) || '';
+}
+
 var build = function (log, args) {
     args = Array.prototype.slice.call(args);
     var index = 1;
-    var o = args[0];
-    o = (typeof o === 'string' || o instanceof String) ? o : (JSON.stringify(o) || '');
+    var o = stringify(args[0]);
     o = o.replace(/%([a-z%])/g, function (match, format) {
         // if we encounter an escaped % then don't increase the array index
         if (match === '%%') {
