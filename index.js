@@ -4,15 +4,9 @@ var nconf = require('nconf');
 
 var logFormat = nconf.get('LOG_FORMAT') || 'KV';
 
-var LOGS_DIR = process.env.LOGS_DIR || '/tmp/logs';
-
-if (!fs.existsSync(LOGS_DIR)) {
-  fs.mkdirSync(LOGS_DIR);
-}
-
 var formatters = {
   JSON: function (o) {
-    return o;
+    return JSON.stringify(o);
   },
   KV: function (o) {
     var entry = '';
@@ -28,10 +22,6 @@ var formatters = {
     })
     return entry;
   }
-};
-
-var p = function (id) {
-  return LOGS_DIR + '/' + id + '.log';
 };
 
 var format = formatters[logFormat];
