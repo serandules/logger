@@ -2,7 +2,7 @@ var fs = require('fs');
 var util = require('util');
 var nconf = require('nconf');
 
-var logFormat = nconf.get('LOG_FORMAT');
+var logFormat = nconf.get('LOG_FORMAT') || 'KV';
 
 var LOGS_DIR = process.env.LOGS_DIR || '/tmp/logs';
 
