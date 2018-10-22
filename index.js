@@ -48,7 +48,7 @@ var serialize = function (value) {
 var extra = function (o, args) {
   var error;
   var second = args.shift();
-  length = args.length;
+  var length = args.length;
   if (length) {
     error = args[length - 1]
     error = error instanceof Error ? args.pop() : null;
@@ -70,11 +70,14 @@ var extra = function (o, args) {
       var kv = pair.split(':');
       var key = kv[0];
       var value = kv[1];
+      if (!value) {
+        return o[key] = value;
+      }
       if (value.indexOf('%') === 0) {
         value = serialize(args.shift());
       }
       o[key] = value;
-    })
+    });
     return o;
   }
 
