@@ -2,6 +2,9 @@
     "name": "logger",
     "version": "0.0.0",
     "description": "logger",
+    "dependencies": {
+        "nconf": "0.10.0"
+    },
     "repository": {
         "type": "git",
         "url": "git://github.com/serandules/logger.git"
